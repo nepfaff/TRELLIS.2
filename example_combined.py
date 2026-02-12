@@ -33,6 +33,7 @@ pipeline = Trellis2ImageTo3DPipeline.from_pretrained("microsoft/TRELLIS.2-4B")
 pipeline.cuda()
 
 image = Image.open("assets/example_image/T.png")
+# image = Image.open("assets/example_image/scenesmith_cart.png")
 mesh = pipeline.run(image)[0]
 mesh.simplify(16777216)  # nvdiffrast limit
 
