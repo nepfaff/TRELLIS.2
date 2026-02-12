@@ -84,12 +84,18 @@ Data processing is streamlined for instant conversions that are fully **renderin
     ```sh
     . ./setup.sh --new-env --basic --flash-attn --nvdiffrast --nvdiffrec --cumesh --o-voxel --flexgemm
     ```
-    The detailed usage of `setup.sh` can be found by running `. ./setup.sh --help`.
+
+    Alternatively, you can use [`uv`](https://github.com/astral-sh/uv) for a faster, conda-free installation. This creates a `.venv` virtual environment, auto-detects your system CUDA version, and installs `uv` automatically if not present:
+    ```sh
+    . ./setup_uv.sh --new-env --basic --flash-attn --nvdiffrast --nvdiffrec --cumesh --o-voxel --flexgemm
+    ```
+
+    The detailed usage of `setup.sh` / `setup_uv.sh` can be found by running `. ./setup.sh --help`.
     ```sh
     Usage: setup.sh [OPTIONS]
     Options:
         -h, --help              Display this help message
-        --new-env               Create a new conda environment
+        --new-env               Create a new conda environment (or .venv for setup_uv.sh)
         --basic                 Install basic dependencies
         --flash-attn            Install flash-attention
         --cumesh                Install cumesh

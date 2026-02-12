@@ -351,7 +351,7 @@ class Trellis2TexturingPipeline(Pipeline):
             metallicRoughnessTexture=Image.fromarray(np.concatenate([np.zeros_like(metallic), roughness, metallic], axis=-1)),
             metallicFactor=1.0,
             roughnessFactor=1.0,
-            alphaMode='OPAQUE',
+            alphaMode='BLEND' if alpha.min() < 250 else 'OPAQUE',
             doubleSided=True,
         )
 
